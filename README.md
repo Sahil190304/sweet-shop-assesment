@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Sweet Shop Assessment - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for managing and browsing a sweet shop inventory. This project serves as the frontend client, interacting with a dedicated backend API to handle user authentication, product management, and orders.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **User Authentication:** Secure login for Admins and Customers.
+* **Product Catalog:** Browse sweets with detailed descriptions and pricing.
+* **Cart Management:** Add items to cart and review orders.
+* **Admin Dashboard:** Manage inventory and view system status (accessible via Admin credentials).
+* **Responsive Design:** Optimized for both desktop and mobile viewing.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React.js / Next.js (TypeScript)
+* **Styling:** Tailwind CSS / CSS Modules
+* **State Management:** Context API / Redux
+* **HTTP Client:** Axios / Fetch
 
-## Expanding the ESLint configuration
+## 🔗 Backend Repository
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The backend API for this project is hosted separately. Please ensure the backend server is running for the frontend to function correctly.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Repository:** [Sweet Shop Assessment API](https://github.com/Sahil190304/sweet-shop-assesment-api)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔑 Demo Credentials
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+You can use the following credentials to test the application's different access levels:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Admin** | `admin@gmail.com` | `admin` |
+| **User (Test)** | `test@gmail.com` | `test` |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow these steps to set up the project locally.
+
+### Prerequisites
+
+* Node.js (v18 or higher)
+* npm or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repo-url>
+    cd <your-project-folder>
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Configure Environment Variables:**
+    Create a `.env` file in the root directory and add your backend API URL:
+    ```env
+    NEXT_PUBLIC_API_URL=http://localhost:5000 # or your deployed backend URL
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+5.  **Open the app:**
+    Visit `http://localhost:3000` in your browser.
+
+## 📂 Project Structure
+
+```bash
+├── components/   # Reusable UI components
+├── pages/        # Application routes/pages
+├── public/       # Static assets (images, icons)
+├── styles/       # Global styles and CSS modules
+├── utils/        # Helper functions and API services
+└── README.md     # Project documentation
